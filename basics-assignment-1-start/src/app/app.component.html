@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ol>
+        <li>Create two new Components (manually or with CLI): WarningAlert and SuccessAlert</li>
+        <li>Output them beneath each other in the AppComponent</li>
+        <li>Output a warning or success message in the Components</li>
+        <li>Style the Components appropriately (maybe some red/ green text?)</li>
+      </ol>
+      <p>Use external or internal templates and styles!</p>
+      <p>Feel free to create more components, nest them into each other or play around with different types of selectors!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+       <p>Please click on the below buttons to see the messages!</p>
+        <button type="button" class="btn btn-success" (click)=showMessage(1)>Success</button>
+        <button type="button" class="btn btn-danger" (click)=showMessage(2)>Danger</button>
+        <button type="button" class="btn btn-warning" (click)=showMessage(3)>Warning</button>
+        <button type="button" class="btn btn-info" (click)=showMessage(4)>Info</button>
+    </div>
+    <div class="col-xs-12" >
+      <p></p>
+      <app-warning *ngIf="messageType=='warning'"></app-warning>
+      <app-success *ngIf="messageType=='success'"></app-success>
+      <app-danger *ngIf="messageType=='danger'"></app-danger>
+      <app-info *ngIf="messageType=='info'"></app-info>
+    </div>
+  </div>
+</div>
+
