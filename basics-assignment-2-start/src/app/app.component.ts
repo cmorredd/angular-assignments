@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	username : String = 'I Love you Cherry';
-
-	reset(){
-		this.username='';
-	}
 }
