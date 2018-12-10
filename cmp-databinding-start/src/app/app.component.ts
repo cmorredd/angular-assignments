@@ -23,5 +23,15 @@ onServerAdded(serverData : {  name : string, content : string}) {
         content: serverData.content
     });
   }
+
+  onChangeFirst(){
+    if(this.serverElements.length>0){
+       this.serverElements[0].name='Changed!';
+    }    
+  }
+
+  onDestroyFirst(){
+      this.serverElements.splice(0,1);
+  }
  
 }
