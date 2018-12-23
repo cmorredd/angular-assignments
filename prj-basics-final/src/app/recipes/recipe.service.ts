@@ -14,7 +14,7 @@ export class RecipeService{
     new Recipe('A Test Recipe2', 'This is simply a test2', 'https://www.swatifood.com/wp-content/uploads/2018/01/how-to-make-chicken-biryani.jpg',
     [new Ingredient('Chicken',1),
      new Ingredient('Rice',2)]),
-    new Recipe('Lemon Rice','Lemon Rice/Chitrannam', 'https://www.cookwithkushi.com/wp-content/uploads/2018/10/IMG_9685_.jpg'
+    new Recipe('Lemon Rice','Lemon Rice/Chitrannam', 'https://diethood.com/wp-content/uploads/2016/09/Lemon-Rice.jpg'
     ,[new Ingredient('Lemon',4),
      new Ingredient('Rice',3)])
   ];
@@ -24,6 +24,10 @@ export class RecipeService{
 	getRecipes(){
 		return this.recipes.slice();
 	}
+
+    getRecipe(index: number){
+        return this.recipes[index];
+    }
 
 	addIngredientsToShoppingList(ingredients: Ingredient[]){
 		this.shoppingListService.addIngredients(ingredients);
