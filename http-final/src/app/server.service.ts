@@ -11,12 +11,12 @@ export class ServerService {
     // return this.http.post('https://udemy-ng-http.firebaseio.com/data.json',
     //   servers,
     //   {headers: headers});
-    return this.http.put('https://udemy-ng-http.firebaseio.com/data.json',
+    return this.http.put('https://udemy-ng-http-d99fd.firebaseio.com/data.json',
       servers,
       {headers: headers});
   }
   getServers() {
-    return this.http.get('https://udemy-ng-http.firebaseio.com/data')
+    return this.http.get('https://udemy-ng-http-d99fd.firebaseio.com/data.json')
       .map(
         (response: Response) => {
           const data = response.json();
@@ -33,7 +33,7 @@ export class ServerService {
       );
   }
   getAppName() {
-    return this.http.get('https://udemy-ng-http.firebaseio.com/appName.json')
+    return this.http.get('https://udemy-ng-http-d99fd.firebaseio.com/data/appName.json')
       .map(
         (response: Response) => {
           return response.json();
