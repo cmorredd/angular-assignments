@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { DataStorageService } from '../../shared/data-storage.service';
-import { Response } from '@angular/http';
+import { HttpEvent } from '@angular/common/http';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class HeaderComponent {
 
 	onSaveData(){
 		this.dataStorageService.storeRecipes().subscribe(
-			(response: Response)=>{
+			(response: HttpEvent<Object>)=>{
 				console.log(response);
 			}
 		);
@@ -28,6 +28,10 @@ export class HeaderComponent {
 
 	onLogout(){
 		this.authService.logout();
+	}
+
+	isAuthenticated(){
+		this.authService.isAuthenticated();
 	}
 	
 }

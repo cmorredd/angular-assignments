@@ -6,6 +6,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { AuthGuardService } from '../auth/auth-guard.service';
 
+
 const recipesRoutes: Routes = [
 	{path:'',component:RecipesComponent,children:
 	[
@@ -17,7 +18,8 @@ const recipesRoutes: Routes = [
 ];
 @NgModule({
 	imports: [RouterModule.forChild(recipesRoutes)],
-	exports: [RouterModule]
+	exports: [RouterModule],
+	providers: [AuthGuardService]
 })
 export class RecipesRoutingModule{
 	
